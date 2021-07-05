@@ -1,0 +1,39 @@
+{
+    "scripts": {
+        "dev": "npm run server",
+        "prod": "npm run build && npm run server:prod",
+        "build": "vite build && vite build --ssr",
+        "server": "node ./ssr",
+        "server:prod": "cross-env NODE_ENV=production node ./ssr",
+        "lint": "eslint \"ssr/**/*.{js,vue}\" --cache --format=json -o eslint.out",
+        "lint:report": "node ./pipeline-scripts/eslint-formatter-reports.js",
+        "prettier:check": "prettier --check \"ssr/**/*.{js,vue}\"",
+        "postinstall": "node ./node_modules/esbuild/install.js"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.28.1",
+        "@typescript-eslint/parser": "^4.28.1",
+        "@vue/eslint-config-typescript": "^7.0.0",
+        "eslint": "^7.29.0",
+        "eslint-plugin-vue": "^7.12.1",
+        "got": "11.8.2",
+        "prettier": "2.3.0",
+        "sass": "1.32.13"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue": "^1.2.4",
+        "@vue/compiler-sfc": "^3.0.11",
+        "@vue/server-renderer": "^3.0.11",
+        "bootstrap": "^5.0.1",
+        "cross-env": "^7.0.3",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-http-proxy": "^1.6.2",
+        "http-proxy-middleware": "^2.0.0",
+        "node-fetch": "^2.6.1",
+        "vite": "^2.4.0",
+        "vite-plugin-ssr": "0.1.2",
+        "vue": "^3.0.11",
+        "vue3-tabs": "^0.1.9"
+    }
+}
