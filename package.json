@@ -31,7 +31,7 @@
         "express-http-proxy": "^1.6.2",
         "http-proxy-middleware": "^2.0.0",
         "node-fetch": "^2.6.1",
-        "vite": "^2.4.0",
+        "vite": "^2.3.8",
         "vite-plugin-ssr": "0.1.2",
         "vue": "^3.0.11",
         "vue3-tabs": "^0.1.9"
