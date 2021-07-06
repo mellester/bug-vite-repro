@@ -1,0 +1,23 @@
+# For more information: https://laravel.com/docs/sail
+version: '3.4'
+services:
+    ssr:
+        image: 'node:14'
+        # tty: true
+        ports:
+            - 3000:3000
+            - 3009:3009 #fallback  ports
+            - 24678:24678 #hmr port
+        working_dir: $PWD
+        volumes:
+            - $PWD:$PWD:cached
+        command: ['npm', 'run', 'dev']
+        networks:
+            - sail
+
+networks:
+    sail:
+        driver: bridge
+volumes:
+    sailmysql:
+        driver: local
